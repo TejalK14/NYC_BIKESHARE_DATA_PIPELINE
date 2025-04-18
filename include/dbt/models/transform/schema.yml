@@ -1,0 +1,240 @@
+version: 2
+
+sources:
+  - name: staging
+    database: nyc-bike-share-de-project
+    schema: NYC_BIKE_SHARE_dataset
+
+    tables:
+      - name: NYC_BIKE_SHARE_data_external
+      - name: station_info
+      - name: region_lookup
+
+models:
+  - name: stg_nyc_bike_share_data
+    description: ""
+    columns:
+      - name: ride_id
+        data_type: string
+        description: ""
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+
+      - name: bike_type
+        data_type: string
+        description: ""
+
+      - name: year_month
+        data_type: string
+        description: ""
+
+      - name: day_of_week
+        data_type: string
+        description: ""
+       
+      - name: ride_start_time
+        data_type: timestamp
+        description: ""
+     
+      - name: ride_end_time
+        data_type: timestamp
+        description: ""
+
+      - name: total_trip_duration_minutes
+        data_type: FLOAT64
+        description: ""
+
+      - name: start_station_name
+        data_type: string
+        description: ""
+
+      - name: start_station_id
+        data_type: string
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: end_station_name
+        data_type: string
+        description: ""
+
+      - name: end_station_id
+        data_type: string
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: start_latitude
+        data_type: FLOAT64
+        description: ""
+
+      - name: start_longitude
+        data_type: FLOAT64
+        description: ""
+
+      - name: end_latitude
+        data_type: FLOAT64
+        description: ""
+
+      - name: end_longitude
+        data_type: FLOAT64
+        description: ""
+      
+      - name: total_distance_miles
+        data_type: FLOAT64
+        description: ""
+      
+      - name: member_type
+        data_type: string
+        description: ""
+
+  - name: stg_station_info
+    description: ""
+    columns:
+      - name: stn_id
+        data_type: string
+        description: ""
+        tests:
+          - unique:
+              severity: warn
+      - name: stn_short_name
+        data_type: string
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+      - name: stn_capacity
+        data_type: Integer
+        description: ""
+
+      - name: stn_longitude
+        data_type: FLOAT64
+        description: ""
+
+      - name: stn_latitude
+        data_type: FLOAT64
+        description: ""
+      
+      - name: stn_name
+        data_type: STRING
+        description: ""
+
+      - name: region_id
+        data_type: Integer
+        description: ""
+  
+  - name: dim_region_lookup
+    description: >
+      List of unique regions and their name
+    columns:
+      - name: region_name
+        data_type: string
+        description: ""
+
+      - name: region_id
+        data_type: Integer
+        description: ""
+  
+  - name: fnl_nyc_bike_share_data
+    description: >
+      final bikeshare data with regions
+    columns:
+      - name: ride_id
+        data_type: string
+        description: ""
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+
+      - name: bike_type
+        data_type: string
+        description: ""
+
+      - name: year_month
+        data_type: string
+        description: ""
+
+      - name: day_of_week
+        data_type: string
+        description: ""
+       
+      - name: ride_start_time
+        data_type: timestamp
+        description: ""
+     
+      - name: ride_end_time
+        data_type: timestamp
+        description: ""
+
+      - name: total_trip_duration_minutes
+        data_type: FLOAT64
+        description: ""
+
+      - name: start_station_name
+        data_type: string
+        description: ""
+
+      - name: start_station_id
+        data_type: string
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: end_station_name
+        data_type: string
+        description: ""
+
+      - name: end_station_id
+        data_type: string
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: start_latitude
+        data_type: FLOAT64
+        description: ""
+
+      - name: start_longitude
+        data_type: FLOAT64
+        description: ""
+
+      - name: end_latitude
+        data_type: FLOAT64
+        description: ""
+
+      - name: end_longitude
+        data_type: FLOAT64
+        description: ""
+      
+      - name: total_distance_miles
+        data_type: FLOAT64
+        description: ""
+      
+      - name: member_type
+        data_type: string
+        description: ""
+      
+      - name: start_region_id
+        data_type: Integer
+        description: ""
+
+      - name: start_region_name
+        data_type: string
+        description: ""
+      
+      - name: end_region_id
+        data_type: Integer
+        description: ""
+      
+      - name: start_region_name
+        data_type: string
+        description: ""
