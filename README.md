@@ -125,12 +125,12 @@ Test your connection and save
    
 
 ## Visualizations
-Content of the subheading 3
+
 
 ## Technologies Used
-Content of the subheading 3
+
 USING ASTRO AIRFLOW, DOCKER, COSMOS, DBT, GOOGLE CLOUD STORAGE, GCP BIG QUERY
 
 ## Results
-Content of the subheading 3
+
 
