@@ -25,7 +25,7 @@ This is a batch data pipeline for NYC BIKE SHARE DATA publicly available here ht
  8. [Results](#Results)
 
 ## Architecture
-
+ ![Architecture](/images/NYC_BIKE_SHARE_DATA_PIPELINE.png)
 
 ## Project Structure
 
@@ -61,7 +61,7 @@ git clone https://github.com/TejalK14/NYC_BIKESHARE_DATA_PIPELINE.git
 2. Create GCS account and create a new project
 3. Create a new service account for the project you created in step 2 (with BigQuery Admin and Storage Admin permissions)
 4. Create key for your service account and save it as my-creds.json in the gcp/keys folder
-5. Update the Terraform file variable.tf with your project name, region, location, dataset name and bucket name and run the following commands to create the gcp resources.
+5. Update the Terraform file variable.tf ni include/Terraform folder with your project name, region, location, dataset name and bucket name and run the following commands to create the gcp resources.
 ```
 terraform init
 terraform plan
@@ -91,7 +91,15 @@ This command will spin up 4 Docker containers on your machine, each for a differ
 Note: Running 'astro dev start' will start your project with the Airflow Webserver exposed at port 8080 and Postgres exposed at port 5432. If you already have either of those ports allocated, you can either [stop your existing Docker containers or change the port](https://www.astronomer.io/docs/astro/cli/troubleshoot-locally#ports-are-not-available-for-my-local-airflow-webserver).
 
   -  Access the Airflow UI for your local Airflow project. To do so, go to http://localhost:8080/ and log in with 'admin' for both your Username and Password.
-9. Run the nyc_bike_share_data_pipeline DAG on Airflow UI. It runs the following 
+9. Create a connection on Airflow UI to gcp.
+``` 
+Click on Admin -> Connections and add connection with following parameters
+    Connection Id = gcp
+    Connection Type = Google cloud
+    Keyfile Path = /usr/local/airflow/include/gcp/keys/my-creds.json
+Test your connection and save
+```
+10. Run the nyc_bike_share_data_pipeline DAG on Airflow UI. It runs the following 
     - Downloads the the JC*.csv.zip files from https://s3.amazonaws.com/tripdata/index.html
     - Extracts the station information from https://gbfs.lyft.com/gbfs/2.3/bkn/en/station_information.json
     - Extracts the region information from https://gbfs.lyft.com/gbfs/2.3/bkn/en/system_regions.json
@@ -100,12 +108,16 @@ Note: Running 'astro dev start' will start your project with the Airflow Webserv
     - loads the station information and region lookup files to big query 
     - creates external table for the main bike share data files
     - run transformations using dbt on the external table and creates a fnl_nyc_bike_share_data table with tranformed data
-10. connect to looker studio using your gcp credentials and run vizualizations
-11. Stop the pipeline
+
+![DAG](/images/NYC_BIKE_SHARE_DATAPIPELINE_DAG.png)
+
+
+11. connect to looker studio using your gcp credentials and run vizualizations
+12. Stop the pipeline
     ```
     astro dev stop
     ```
-12. Destroy the gcp resources when done with project.
+13. Destroy the gcp resources when done with project.
    ```
    terraform destroy
    ```
