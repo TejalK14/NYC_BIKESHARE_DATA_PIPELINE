@@ -4,9 +4,9 @@ nyc_bike_share_data_pipeline:
   dev:
     type: bigquery
     method: service-account
-    keyfile: /usr/local/airflow/include/gcp/keys/my-creds.json
-    project: nyc-bike-share-de-project
-    dataset: NYC_BIKE_SHARE_dataset
+    keyfile: /usr/local/airflow/include/gcp/keys/my-creds.json # your key file path
+    project: nyc-bike-share-de-project # your project name
+    dataset: NYC_BIKE_SHARE_dataset # your dataset name
     threads: 1
     timeout_seconds: 300
     location: US
