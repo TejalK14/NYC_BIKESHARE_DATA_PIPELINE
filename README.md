@@ -4,22 +4,23 @@ BATCH PIPELINE FOR NYC BIKE SHARE DATA USING ASTRO AIRFLOW, DOCKER, COSMOS, DBT,
 This is a batch data pipeline for NYC BIKE SHARE DATA publicly available here https://citibikenyc.com/system-data. It extracts data from 2022 - 2025 and loads the data into staging environment and then performs tranformations on the data using DBT and loads the transformed data back into GCP biquery for further analysis.
 
 ## Table of Contents
+---
 
- 1. [Architecture](#subheading-1)
- 2. [Project Structure](#subheading-2)
- 3. [Installation Guide](#subheading-3)
- 4. [Data Sources](#subheading-4)
- 5. [Usage](#subheading-5)
- 6. [Visualizations](#subheading-6)
- 7. [Technologies Used](#subheading-7)
- 8. [Results](#subheading-8)
+ 1. [Architecture](#Architecture)
+ 2. [Project Structure](#Project-Structure)
+ 3. [Installation Guide](#Installation-Guide)
+ 4. [Data Sources](#Data-Sources)
+ 5. [Usage](#Usage)
+ 6. [Visualizations](#Vizualizations)
+ 7. [Technologies Used](#Technologies-Used)
+ 8. [Results](#Results)
 
 ## Architecture
-================
-Content of the subheading 1
+---
+
 
 ## Project Structure
-=====================
+---
 This project contains the following files and folders:
 ```
     /NYC_BIKE_SHARE_DE_PROJECT
@@ -38,8 +39,8 @@ This project contains the following files and folders:
     └── README.md               # project overview and instructions
 ```
 ## Installation Guide
-=======================
-## Prerequisites - you will need the following installed on your local machine
+---
+Prerequisites - you will need the following installed on your local machine
 - Docker - install docker and validate it by running - docker --version
 - Astro CLI - install astro cli as per instrustion here https://www.astronomer.io/docs/astro/cli/install-cli/
 - Terraform - install Terraform( use hashicorp terraform from your visual studio code) and validate it by running command: terraform --version 
@@ -49,23 +50,23 @@ This project contains the following files and folders:
 
 
 ## Data Sources
-=======================
+---
 Content of the subheading 4
 
 ## Usage
-=======================
+---
 Content of the subheading 3
 
 ## Visualizations
-=======================
+---
 Content of the subheading 3
 
 ## Technologies Used
-=======================
+---
 Content of the subheading 3
 
 ## Results
-=======================
+---
 Content of the subheading 3
 
 
