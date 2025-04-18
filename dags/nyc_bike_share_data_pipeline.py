@@ -76,10 +76,6 @@ def extract_rgn_info():
     rgn_info_parsed = pd.json_normalize(rgn_info_json["data"], "regions")
     rgn_info_parsed.to_csv(f'{data_folder}/region_lookup.csv',index=False)
 
-print(f"project_name = {PROJECTNAME}")
-print(f"DATASETNAME = {DATASETNAME}")
-print(f"EXTERNALTBLNAME = {EXTERNALTBLNAME}")
-
 # create external table
 CREATE_EXTERNAL_TABLES_SQL = f"""
 CREATE OR REPLACE EXTERNAL TABLE `{PROJECTNAME}.{DATASETNAME}.{EXTERNALTBLNAME}`
