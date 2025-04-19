@@ -96,6 +96,8 @@ Click on Admin -> Connections and add connection with following parameters
     Keyfile Path = /usr/local/airflow/include/gcp/keys/my-creds.json
 Test your connection and save
 ```
+![gcp_connection](/images/GCP_CONNECTION.png)
+
 10. Run the nyc_bike_share_data_pipeline DAG on Airflow UI. It runs the following 
     - Downloads the the JC*.csv.zip files from https://s3.amazonaws.com/tripdata/index.html
     - Extracts the station information from https://gbfs.lyft.com/gbfs/2.3/bkn/en/station_information.json
