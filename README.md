@@ -18,11 +18,8 @@ This is a batch data pipeline for NYC BIKE SHARE DATA publicly available here ht
  1. [Architecture](#Architecture)
  2. [Project Structure](#Project-Structure)
  3. [Installation Guide](#Installation-Guide)
- 4. [Data Sources](#Data-Sources)
- 5. [Usage](#Usage)
- 6. [Visualizations](#Vizualizations)
- 7. [Technologies Used](#Technologies-Used)
- 8. [Results](#Results)
+ 4. [Visualizations](#Visualizations)
+ 5. [Technologies Used](#Technologies-Used)
 
 ## Architecture
  ![Architecture](/images/NYC_BIKE_SHARE_DATA_PIPELINE.png)
@@ -122,15 +119,11 @@ Test your connection and save
    terraform destroy
    ```
 
-   
-
 ## Visualizations
-
+The data is visualized in [Looker Studio] (https://lookerstudio.google.com/s/hLx4uXW-tKw), depicting the usage by day of week and year month, also classic vs electric bike and distribution by start region.
+![Visualizations](/images/Data_Vizualizations.png)
 
 ## Technologies Used
 
-USING ASTRO AIRFLOW, DOCKER, COSMOS, DBT, GOOGLE CLOUD STORAGE, GCP BIG QUERY
-
-## Results
-
+ASTRO AIRFLOW, DOCKER, COSMOS, DBT, GOOGLE CLOUD STORAGE, GCP BIG QUERY
 
