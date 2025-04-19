@@ -120,7 +120,7 @@ Test your connection and save
    ```
 
 ## Visualizations
-The data is visualized in [Looker Studio] (https://lookerstudio.google.com/s/hLx4uXW-tKw), depicting the usage by day of week and year month, also classic vs electric bike and distribution by start region.
+The data is visualized in [Looker Studio](https://lookerstudio.google.com/s/hLx4uXW-tKw), depicting the usage by day of week and year month, also classic vs electric bike and distribution by start region.
 ![Visualizations](/images/Data_Vizualizations.png)
 
 ## Technologies Used
